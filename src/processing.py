@@ -1,4 +1,4 @@
-from typing import List, Dict, Any, Optional
+from typing import Any, Dict, List
 
 
 def filter_by_state(operations_list: List[Dict[str, Any]], state: str = "EXECUTED") -> List[Dict[str, Any]]:
@@ -47,11 +47,10 @@ def sort_by_date(operations_list: List[Dict[str, Any]], reverse: bool = True) ->
     # Функция для получения даты из операции
     def get_date(operation: Dict[str, Any]) -> str:
         """Вспомогательная функция для извлечения даты из операции"""
-        return operation['date']
+        return operation["date"]
 
     # Сортируем список по дате
     sorted_list.sort(key=get_date, reverse=reverse)
-
 
     # Возвращаем отсортированный список
     return sorted_list
